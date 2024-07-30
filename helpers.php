@@ -4,7 +4,7 @@ use Binjuhor\Blade\BladeTemplate as Blade;
 
 function asset($file, $show = true)
 {
-    $file_url = "resources/assets/{$file}";
+    $file_url = "src/assets/{$file}";
     if (!$show) {
         return $file_url;
     }
@@ -32,7 +32,7 @@ function route($part = '')
 function page( $page, $params = [] )
 {
     $blade = new Blade([
-        'view' => __DIR__ . '/resources/views',
+        'view' => __DIR__ . '/src/views',
         'cache' => __DIR__ . '/cache',
         'compileDir' => __DIR__ . '/compiles',
         'url' => ''
