@@ -1,0 +1,9 @@
+{
+    "require": {
+        "binjuhor/blade": "^1.0",
+        "nikic/fast-route": "^1.3"
+    },
+    "autoload": {
+        "files": ["helpers.php", "routes.php"]
+    }
+}

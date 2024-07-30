@@ -1,0 +1,25 @@
+{
+  "name": "static-website",
+  "version": "1.0.0",
+  "description": "Static website with blade templating engine",
+  "main": "index.php",
+  "scripts": {
+    "dev": "sass --watch --source-map resources/assets/scss/styles.scss resources/assets/css/styles.css",
+    "build": "sass --no-source-map  resources/assets/scss/styles.scss resources/assets/css/styles.css --style compressed",
+    "setup": "yarn install && composer install && cp .env.example .env",
+    "start": "docker compose up -d --build && yarn dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com:binjuhor/static-website.git"
+  },
+  "keywords": [
+    "php",
+    "blade",
+    "js"
+  ],
+  "author": "",
+  "dependencies": {
+    "sass": "^1.71.0"
+  }
+}
