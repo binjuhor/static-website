@@ -66,17 +66,16 @@ function initContent($dispatcher)
 
     switch ($routeInfo[0]) {
         case FastRoute\Dispatcher::NOT_FOUND:
-            http_response_code(404);
-            echo '404 Not Found';
+            page('404');
             break;
         case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
-            http_response_code(405);
-            echo '405 Method Not Allowed';
+            $allowedMethods = $routeInfo[1];
+            page('405', $allowedMethods);
             break;
         case FastRoute\Dispatcher::FOUND:
             $handler = $routeInfo[1];
             $vars = $routeInfo[2];
-            $handler($vars);
+            page($handler, $vars);
             break;
     }
 }
